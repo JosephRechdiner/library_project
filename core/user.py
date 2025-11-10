@@ -1,3 +1,5 @@
+from data.json_convert import *
+
 class User:
     id_counter = 100
 
@@ -16,7 +18,10 @@ class User:
 
     def get_borrowed_books(self):
         return self._borrowed_books
+    
+    def get_borrowed_book_json(self):
+        return convert_books_to_json(self.get_borrowed_books())
 
     def get_user_json_look(self):
-        return {self._id : {"Name": self._name, "Borrowed_books": self._borrowed_books}}
+        return {self._id : {"Name": self._name, "Borrowed_books": self.get_borrowed_book_json()}}
     
