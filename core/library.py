@@ -1,15 +1,12 @@
-from user import User
-from book import Book
-
-
 class Library:
-
+    
     def __init__(self):
         self._books = []
         self._users = []
 
     def add_book(self, book):
         self._books.append(book)
+        
 
     def delete_book(self, book):
         if book in self._books:
@@ -32,6 +29,6 @@ class Library:
             return "user not exist"
 
         for book in self._books:
-            book.get_isbn() == book_isbn:
+            book.get_isbn() == book_isbn
             break
 
