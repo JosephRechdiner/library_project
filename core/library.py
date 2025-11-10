@@ -18,17 +18,72 @@ class Library:
     def add_user(self, user):
         self._users.append(user)
 
-    def borrow_book(self, user_id, book_isbn):
-        user = None
-        for c_user in self._users:
-            if c_user.get_user_id() == user_id:
-                user = c_user
-                break
-
-        if not user:
+    def delete_user(self, user):
+        if user in self._books:
+            self._users.remove(user)
+            return "user deleted"
+        else:
             return "user not exist"
 
+    def get_user_by_id(self, user_id):
+        for user in self._users:
+            if user.get_user_id() == user_id:
+                return user
+
+
+    def get_book_by_isbn(self, book_isbn):
         for book in self._books:
-            book.get_isbn() == book_isbn
-            break
+            if book.get_isbn() == book_isbn:
+                return book
+
+
+    def borrow_book(self, user_id, book_isbn):
+        user = self.get_user_by_id(user_id)
+        book = self.get_book_by_isbn(book_isbn)
+
+        if user and book:
+            if book.is_available:
+                book.is_available = False
+                user.borrowed_books.append(book)
+                return True
+
+        return False
+
+
+    def return_book(self,user_id, book_isbn):
+        user = self.get_user_by_id()
+        book = self.get_book_by_isbn()
+
+        if user and book:
+            user.borrowed_books.remove(book)
+            book.is_available = True
+            print("sucsses return")
+        
+        print("error")
+        return False
+        
+    
+    def list_available_books(self):
+        available_books = []
+        for book in self._books:
+            if book.is_available:
+                print(book)
+
+        return available_books
+    
+
+    def search_book(self, title):
+        for book in self._books:
+            if book.title == title:
+                return book
+        return "book not found"
+
+
+            
+
+
+
+
+
+
 
