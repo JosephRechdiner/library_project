@@ -51,16 +51,15 @@ class Library:
 
 
     def return_book(self,user_id, book_isbn):
-        user = self.get_user_by_id()
-        book = self.get_book_by_isbn()
+        user = self.get_user_by_id(user_id)
+        book = self.get_book_by_isbn(book_isbn)
 
         if user and book:
-            user.borrowed_books.remove(book)
+            user.get_borrowed_books().remove(book)
             book.is_available = True
             print("sucsses return")
-        
-        print("error")
-        return False
+        else:
+            print("error")
         
     
     def list_available_books(self):

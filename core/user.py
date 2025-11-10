@@ -23,5 +23,5 @@ class User:
         return convert_books_to_json(self.get_borrowed_books())
 
     def get_user_json_look(self):
-        return {self._id : {"Name": self._name, "Borrowed_books": self.get_borrowed_book_json()}}
+        return {"Name": self._name, "Id": self._id, "Borrowed_books": self.get_borrowed_book_json()}
     
