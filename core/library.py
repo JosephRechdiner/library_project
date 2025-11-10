@@ -44,7 +44,7 @@ class Library:
         if user and book:
             if book.is_available:
                 book.is_available = False
-                user.borrowed_books.append(book)
+                user._borrowed_books.append(book)
                 return True
 
         return False
