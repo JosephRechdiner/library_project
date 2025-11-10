@@ -19,7 +19,15 @@ def main():
             username = input("Enter username: ")
             user = User(username)
             library.add_user(user)
+        elif choice == "2":
+            username = input("Enter username: ")
+            user = User(username)
+            library.add_user(user)
 
+        elif choice == "3":
+            user_id = input("Enter user id: ")
+            book_isbn = input("Enter book isbn: ")
+            library.borrow_book(user_id, book_isbn)
         elif choice == "3":
             user_id = input("Enter user id: ")
             book_isbn = input("Enter book isbn: ")
