@@ -3,9 +3,8 @@ class User:
 
     def __init__(self, name):
         self._name = name
-        self._id = str(User.id_counter)
+        self._id = User.id_counter
         self._borrowed_books = []
-
         User.id_counter += 1
 
     def get_user_name(self):

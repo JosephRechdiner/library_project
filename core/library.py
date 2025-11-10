@@ -1,12 +1,15 @@
+from user import User
+from book import Book
+
+
 class Library:
-    
+
     def __init__(self):
         self._books = []
         self._users = []
 
     def add_book(self, book):
         self._books.append(book)
-        
 
     def delete_book(self, book):
         if book in self._books:
