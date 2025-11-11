@@ -1,3 +1,5 @@
+from data.json_convert import *
+
 class User:
     id_counter = 100
 
@@ -12,9 +14,6 @@ class User:
 
     def get_user_id(self):
         return self._id
-    
-    def set_user_id(self, new_id):
-        self._id = new_id
 
     def get_borrowed_books(self):
         return self._borrowed_books

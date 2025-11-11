@@ -3,25 +3,39 @@
       {
          "Title": "hello",
          "Author": "yosi",
-         "ISBN": "1000",
-         "is_available": "Not Available"
+         "ISBN": "9780321342",
+         "Available": "Not Available"
       },
       {
          "Title": "bye",
          "Author": "israel",
-         "ISBN": "1001",
-         "is_available": "Available"
+         "ISBN": 9780321343,
+         "Available": "Available"
       },
       {
          "Title": "yooo",
          "Author": "chaim",
-         "ISBN": "1002",
-         "is_available": "Available"
+         "ISBN": 9780321344,
+         "Available": "Available"
       }
    ],
    "Users": [
       {
-         "100": {
-            "Name": "noam",
-            "Borrowed_books": [
-               
+         "Name": "noam",
+         "Id": 100,
+         "Borrowed_books": [
+            {
+               "Title": "hello",
+               "Author": "yosi",
+               "ISBN": "9780321342",
+               "Available": "Not Available"
+            }
+         ]
+      },
+      {
+         "Name": "nir",
+         "Id": 101,
+         "Borrowed_books": []
+      }
+   ]
+}
