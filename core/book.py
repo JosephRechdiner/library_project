@@ -13,6 +13,7 @@ class Book:
         return f"Title: {self.title} | Author: {self.author} | ISBN: {self.ISBN} | {self.checking_available()}"
 
     def get_isbn(self):
+        print("getting  isbn")
         return self.ISBN
     
     def checking_available(self):

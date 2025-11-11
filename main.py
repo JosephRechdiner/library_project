@@ -5,6 +5,7 @@ from data.python_convert import import_jason_data, convert_users_to_python, conv
 
 def main():
     library = Library()
+    
     choice = None
     while choice != "7":
         print("1. Add Book\n2. Add User\n3. Borrow Book\n4. Return book\5List available book\n7. Save & Exit")
@@ -57,6 +58,6 @@ if __name__ == "__main__":
     l.add_book(b3)
     l.add_user(u1)
     l.add_user(u2)
-    #l.borrow_book(u1.get_user_id(), b1.get_isbn())
+    l.borrow_book(u1.get_user_id(), b1.get_isbn())
 
     convert_to_json(l)

@@ -40,7 +40,6 @@ class Library:
     def borrow_book(self, user_id, book_isbn):
         user = self.get_user_by_id(user_id)
         book = self.get_book_by_isbn(book_isbn)
-
         if user and book:
             if book.is_available:
                 book.is_available = False
