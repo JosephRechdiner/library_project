@@ -1,12 +1,15 @@
+# from user import User
+# from book import Book
+
+
 class Library:
-    
+
     def __init__(self):
         self._books = []
         self._users = []
 
     def add_book(self, book):
         self._books.append(book)
-        
 
     def delete_book(self, book):
         if book in self._books:
@@ -43,23 +46,22 @@ class Library:
         if user and book:
             if book.is_available:
                 book.is_available = False
-                user._borrowed_books.append(book)
+                user.get_borrowed_books().append(book)
                 return True
 
         return False
 
 
     def return_book(self,user_id, book_isbn):
-        user = self.get_user_by_id()
-        book = self.get_book_by_isbn()
+        user = self.get_user_by_id(user_id)
+        book = self.get_book_by_isbn(book_isbn)
 
         if user and book:
-            user.borrowed_books.remove(book)
+            user.get_borrowed_books().remove(book)
             book.is_available = True
             print("sucsses return")
-        
-        print("error")
-        return False
+        else:
+            print("error")
         
     
     def list_available_books(self):
