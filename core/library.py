@@ -1,5 +1,5 @@
-from user import User
-from book import Book
+# from user import User
+# from book import Book
 
 
 class Library:
@@ -47,7 +47,7 @@ class Library:
         if user and book:
             if book.is_available:
                 book.is_available = False
-                user.borrowed_books.append(book)
+                user.get_borrowed_books().append(book)
                 return True
 
         return False

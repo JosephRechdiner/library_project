@@ -1,4 +1,5 @@
 import json
+from core.book import *
 
 PATH = "json_data.json"
 

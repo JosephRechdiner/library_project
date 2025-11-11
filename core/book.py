@@ -19,4 +19,7 @@ class Book:
         if self.is_available:
             return f"Available"
         return f"Not Available"
+    
+    def get_book_json_look(self):
+        return {"Title": self.title, "Author": self.author, "ISBN": self.ISBN, "Available": self.checking_available()}
 
