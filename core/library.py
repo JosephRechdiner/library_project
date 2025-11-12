@@ -46,10 +46,12 @@ class Library:
         if user and book:
             if book.is_available:
                 book.is_available = False
-                user.get_borrowed_books().append(book)
-                return True
+                user._borrowed_books.append(book)
+        elif not user:
+            print("not user")
+        elif not book:
+            print("not book")
 
-        return False
 
 
     def return_book(self,user_id, book_isbn):
@@ -60,8 +62,10 @@ class Library:
             user.get_borrowed_books().remove(book)
             book.is_available = True
             print("sucsses return")
-        else:
-            print("error")
+        elif not user:
+            print("not user")
+        elif not book:
+            print("not book")
         
     
     def list_available_books(self):
@@ -76,8 +80,9 @@ class Library:
     def search_book(self, title):
         for book in self._books:
             if book.title == title:
-                return book
-        return "book not found"
+                print(book)
+                return
+        print("book not found")
 
 
             

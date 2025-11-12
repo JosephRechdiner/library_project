@@ -7,7 +7,7 @@ class Book:
         self.ISBN = Book.ISBN_counter
         self.is_available = True
 
-        Book.ISBN_counter = int(Book.ISBN_counter) + 1
+        Book.ISBN_counter = str(int(Book.ISBN_counter) + 1)
 
     def __str__(self):
         return f"Title: {self.title} | Author: {self.author} | ISBN: {self.ISBN} | {self.checking_available()}"
